@@ -182,8 +182,16 @@ export default function AdminDashboard() {
       {/* Sidebar */}
       <aside className="w-full lg:w-80 bg-white border-r border-gray-200 p-6 flex flex-col">
         <div className="mb-10">
-          <h1 className="text-2xl font-bold text-blue-900 tracking-tighter">{CLINIC_INFO.displayName}</h1>
-          <p className="text-xs text-blue-600 font-bold uppercase tracking-widest">Admin Dashboard</p>
+          <div className="flex items-center gap-3 mb-2">
+            <img 
+              src="https://i.ibb.co/Y7nDkTjZ/6e5d4ab0-f303-4add-bcf0-4da2e3b24718-removebg-preview.png" 
+              alt="Logo" 
+              className="w-8 h-8 object-contain"
+              referrerPolicy="no-referrer"
+            />
+            <h1 className="text-xl font-bold text-blue-900 tracking-tighter">{CLINIC_INFO.displayName}</h1>
+          </div>
+          <p className="text-[10px] text-blue-600 font-bold uppercase tracking-widest">Admin Dashboard</p>
         </div>
 
         <div className="flex-1 space-y-2">

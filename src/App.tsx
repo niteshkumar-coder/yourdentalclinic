@@ -338,7 +338,15 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 lg:col-span-1">
-              <h2 className="text-2xl font-extrabold tracking-tighter text-primary mb-4">{CLINIC_INFO.displayName}</h2>
+              <div className="flex items-center gap-3 mb-6">
+                <img 
+                  src="https://i.ibb.co/Y7nDkTjZ/6e5d4ab0-f303-4add-bcf0-4da2e3b24718-removebg-preview.png" 
+                  alt="YOUR DENTIST Logo" 
+                  className="w-10 h-10 object-contain"
+                  referrerPolicy="no-referrer"
+                />
+                <h2 className="text-2xl font-extrabold tracking-tighter text-primary">{CLINIC_INFO.displayName}</h2>
+              </div>
               <p className="text-text-light mb-6 leading-relaxed">
                 Premium aesthetic and dental clinic in Patna providing world-class dental care with advanced technology.
               </p>

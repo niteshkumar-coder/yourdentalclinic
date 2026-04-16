@@ -26,13 +26,23 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <a href="#home" className="flex flex-col">
-              <span className="text-2xl font-extrabold tracking-tighter text-primary">
-                {CLINIC_INFO.displayName}
-              </span>
-              <span className="text-[14px] font-light text-text-light leading-none">
-                Aesthetic & Dental Clinic
-              </span>
+            <a href="#home" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 relative">
+                <img 
+                  src="https://i.ibb.co/Y7nDkTjZ/6e5d4ab0-f303-4add-bcf0-4da2e3b24718-removebg-preview.png" 
+                  alt="YOUR DENTIST Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-extrabold tracking-tighter text-primary leading-tight group-hover:text-blue-800 transition-colors">
+                  {CLINIC_INFO.displayName}
+                </span>
+                <span className="text-[12px] font-light text-text-light leading-none">
+                  Aesthetic & Dental Clinic
+                </span>
+              </div>
             </a>
           </div>
 
