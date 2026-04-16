@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #004A99;
+  --color-secondary: #E6F0FF;
+  --color-accent: #FFD700;
+  --color-text-dark: #1A202C;
+  --color-text-light: #718096;
+  --color-bg-soft: #F8FAFC;
+  
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-soft text-text-dark font-sans;
+  }
+}
+
+.review-quote {
+  @apply p-4 bg-[#F0F7FF] rounded-xl italic text-sm text-[#2C5282] leading-relaxed border-l-4 border-primary;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all hover:bg-blue-800;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary px-6 py-3 rounded-full font-semibold transition-all hover:bg-primary hover:text-white;
+}

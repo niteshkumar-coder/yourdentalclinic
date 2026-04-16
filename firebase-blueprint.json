@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "Appointment": {
+      "title": "Appointment",
+      "description": "A dental appointment booking",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string", "description": "Patient's full name" },
+        "phone": { "type": "string", "description": "Patient's phone number" },
+        "age": { "type": "string", "description": "Patient's age" },
+        "gender": { "type": "string", "description": "Patient's gender" },
+        "address": { "type": "string", "description": "Patient's address/area" },
+        "service": { "type": "string", "description": "Selected dental service" },
+        "preferredDate": { "type": "string", "description": "Preferred appointment date" },
+        "preferredTime": { "type": "string", "description": "Preferred appointment time" },
+        "notes": { "type": "string", "description": "Optional notes or concerns" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the appointment was created" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "completed", "cancelled"], "description": "Current status of the appointment" },
+        "diagnosis": { "type": "string", "description": "Clinical diagnosis (Admin only)" },
+        "medicines": { "type": "string", "description": "Prescribed medicines (Admin only)" },
+        "treatmentPlanned": { "type": "string", "description": "Planned treatment (Admin only)" },
+        "advice": { "type": "string", "description": "Doctor's advice (Admin only)" },
+        "followUpDate": { "type": "string", "description": "Next follow-up date (Admin only)" }
+      },
+      "required": ["fullName", "phone", "service", "preferredDate", "preferredTime"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Application user (Admin or Client)",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["admin", "client"] },
+        "displayName": { "type": "string" }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Collection of dental appointments"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and roles"
+    }
+  }
+}
