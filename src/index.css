@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #004A99;
-  --color-secondary: #E6F0FF;
+  --color-primary: #0B6EBD;
+  --color-medical: #22A652;
+  --color-secondary: #EAF4FC;
   --color-accent: #FFD700;
-  --color-text-dark: #1A202C;
-  --color-text-light: #718096;
-  --color-bg-soft: #F8FAFC;
+  --color-text-dark: #1A365D;
+  --color-text-light: #4A5568;
+  --color-bg-soft: #F7FAFC;
   
-  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
   
-  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-card: 0 10px 25px -5px rgba(11, 110, 189, 0.05), 0 8px 10px -6px rgba(11, 110, 189, 0.02);
 }
 
 @layer base {
   body {
-    @apply bg-bg-soft text-text-dark font-sans;
+    @apply bg-white text-text-dark font-sans;
   }
 }
 
@@ -24,9 +25,14 @@
 }
 
 .btn-primary {
-  @apply bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all hover:bg-blue-800;
+  @apply bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-blue-800 hover:shadow-lg hover:shadow-primary/20 active:scale-95;
 }
 
 .btn-outline {
-  @apply border-2 border-primary text-primary px-6 py-3 rounded-full font-semibold transition-all hover:bg-primary hover:text-white;
+  @apply border-2 border-primary text-primary px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/10 active:scale-95;
 }
+
+.btn-medical {
+  @apply bg-medical text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-[#1C8D42] hover:shadow-lg hover:shadow-medical/20 active:scale-95;
+}
+

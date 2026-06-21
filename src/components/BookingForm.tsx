@@ -132,25 +132,25 @@ export default function BookingForm() {
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="bg-blue-50 p-12 rounded-3xl border-2 border-blue-100"
+            className="bg-secondary p-12 rounded-3xl border-2 border-[#EDF2F7]"
           >
-            <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-200">
+            <div className="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
               <CheckCircle2 size={40} />
             </div>
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Appointment Booked!</h3>
-            <p className="text-gray-600 mb-8 text-lg">
-              Thank you, <span className="font-bold text-blue-600">{formData.fullName}</span>. Your appointment for <span className="font-bold">{formData.service}</span> has been received. Your receipt has been downloaded automatically.
+            <p className="text-gray-600 mb-8 text-lg font-medium">
+              Thank you, <span className="font-extrabold text-primary">{formData.fullName}</span>. Your appointment for <span className="font-bold">{formData.service}</span> has been received. Your receipt has been downloaded automatically.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => setSuccess(false)}
-                className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-xl font-bold hover:bg-blue-50 transition-all"
+                className="bg-white text-primary border-2 border-primary px-8 py-3 rounded-xl font-bold hover:bg-secondary/45 transition-all"
               >
                 Book Another
               </button>
               <button
-                onClick={() => window.location.href = '/'}
-                className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
+                onClick={() => { window.location.href = '#home'; setSuccess(false); }}
+                className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-800 transition-all shadow-lg shadow-primary/20"
               >
                 Back to Home
               </button>
@@ -162,13 +162,13 @@ export default function BookingForm() {
   }
 
   return (
-    <section id="book" className="py-24 bg-blue-50">
+    <section id="book" className="py-24 bg-secondary/30 rounded-[2.5rem] border border-primary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Schedule a Visit</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">Book Your Premium Dental Experience</h3>
-            <p className="text-gray-600 text-lg mb-8">
+            <h2 className="text-primary font-black uppercase tracking-widest text-xs mb-3">Schedule a Visit</h2>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">Book Your Premium Dental Experience</h3>
+            <p className="text-gray-600 text-base md:text-lg mb-8 font-semibold leading-relaxed">
               Take the first step towards a healthier, brighter smile. Fill out the form and our team will confirm your appointment shortly.
             </p>
             
@@ -176,16 +176,17 @@ export default function BookingForm() {
               {[
                 { icon: CheckCircle2, text: "Instant PDF Receipt Generation" },
                 { icon: CheckCircle2, text: "Priority Scheduling for Emergencies" },
-                { icon: CheckCircle2, text: "Expert Consultation with Dr. Aryan Parmar" },
+                { icon: CheckCircle2, text: "Expert Consultation with Dr. Neha Kumari (BDS)" },
                 { icon: CheckCircle2, text: "Modern, Hygienic & Comfortable Environment" }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-gray-700 font-medium">
-                  <item.icon className="text-blue-600" size={20} />
+                <div key={i} className="flex items-center gap-3 text-gray-700 font-bold text-sm">
+                  <item.icon className="text-medical" size={20} />
                   {item.text}
                 </div>
               ))}
             </div>
           </div>
+
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -327,7 +328,7 @@ export default function BookingForm() {
               
               <div className="flex items-center gap-2 text-[12px] text-[#2F855A] mt-5">
                 <div className="w-2 h-2 bg-[#48BB78] rounded-full"></div>
-                Open Now &middot; Patliputra Branch &middot; Closes 8 PM
+                Open Now &middot; Rajeev Nagar Main Road, Patna &middot; Closes 8 PM
               </div>
             </form>
           </motion.div>

@@ -27,19 +27,19 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <a href="#home" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 relative">
+              <div className="w-14 h-14 relative shrink-0">
                 <img 
-                  src="https://i.ibb.co/Y7nDkTjZ/6e5d4ab0-f303-4add-bcf0-4da2e3b24718-removebg-preview.png" 
-                  alt="YOUR DENTIST Logo" 
+                  src="https://i.ibb.co/k2by7F4X/image.png" 
+                  alt="Bihar Dental Clinic Logo" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-tighter text-primary leading-tight group-hover:text-blue-800 transition-colors">
-                  {CLINIC_INFO.displayName}
+                <span className="text-lg md:text-xl font-extrabold tracking-tighter text-[#0B6EBD] leading-tight uppercase group-hover:text-blue-800 transition-colors">
+                  Bihar Dental Clinic
                 </span>
-                <span className="text-[12px] font-light text-text-light leading-none">
+                <span className="text-[10px] font-bold text-text-light tracking-wide uppercase leading-none">
                   Aesthetic & Dental Clinic
                 </span>
               </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-secondary/40 rounded-lg transition-colors"
                 >
                   {link.name}
                 </a>
@@ -104,7 +104,7 @@ export default function Navbar() {
                 <a
                   href="#book"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center bg-blue-600 text-white px-4 py-3 rounded-xl font-semibold shadow-md"
+                  className="block w-full text-center bg-primary text-white px-4 py-3 rounded-xl font-semibold shadow-md hover:bg-blue-800 transition-colors"
                 >
                   Book Appointment
                 </a>

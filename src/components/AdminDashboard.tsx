@@ -115,17 +115,17 @@ export default function AdminDashboard() {
     doc.save(`Updated_Receipt_${appt.fullName.replace(/\s+/g, '_')}.pdf`);
   };
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center bg-gray-50"><motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1 }} className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full" /></div>;
+  if (loading) return <div className="min-h-screen flex items-center justify-center bg-gray-50"><motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1 }} className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full" /></div>;
 
   if (!isAdminLoggedIn) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-white p-10 rounded-[2.5rem] shadow-2xl max-w-md w-full text-center">
-          <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
             <LogIn size={32} />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h2>
-          <p className="text-gray-600 mb-8">Enter the password to access the management dashboard.</p>
+          <p className="text-gray-600 mb-8 font-medium">Enter the password to access the management dashboard.</p>
           
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="text-left">
@@ -134,7 +134,7 @@ export default function AdminDashboard() {
                 type="password"
                 required
                 placeholder="Enter admin password"
-                className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent focus:border-blue-500 rounded-2xl outline-none transition-all"
+                className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent focus:border-primary rounded-2xl outline-none transition-all font-semibold"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -147,7 +147,7 @@ export default function AdminDashboard() {
             <button 
               type="submit" 
               disabled={authLoading}
-              className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 disabled:opacity-50"
+              className="w-full bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-blue-800 transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
             >
               {authLoading ? 'Verifying...' : 'Unlock Dashboard'}
             </button>
@@ -161,7 +161,7 @@ export default function AdminDashboard() {
                 window.location.hash = '';
                 window.location.href = '/';
               }} 
-              className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-blue-800 transition-colors"
             >
               <ArrowLeft size={16} />
               Go to Home Page
@@ -183,15 +183,12 @@ export default function AdminDashboard() {
       <aside className="w-full lg:w-80 bg-white border-r border-gray-200 p-6 flex flex-col">
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-2">
-            <img 
-              src="https://i.ibb.co/Y7nDkTjZ/6e5d4ab0-f303-4add-bcf0-4da2e3b24718-removebg-preview.png" 
-              alt="Logo" 
-              className="w-8 h-8 object-contain"
-              referrerPolicy="no-referrer"
-            />
-            <h1 className="text-xl font-bold text-blue-900 tracking-tighter">{CLINIC_INFO.displayName}</h1>
+            <div className="w-9 h-9 bg-primary text-white rounded-lg flex items-center justify-center font-black">
+              BD
+            </div>
+            <h1 className="text-xl font-black text-primary tracking-tighter">{CLINIC_INFO.displayName}</h1>
           </div>
-          <p className="text-[10px] text-blue-600 font-bold uppercase tracking-widest">Admin Dashboard</p>
+          <p className="text-[10px] text-medical font-black uppercase tracking-widest pl-12 -mt-2">Admin Dashboard</p>
         </div>
 
         <div className="flex-1 space-y-2">
@@ -200,7 +197,7 @@ export default function AdminDashboard() {
             <input
               type="text"
               placeholder="Search patients..."
-              className="w-full pl-10 pr-4 py-3 bg-gray-50 border-none rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary outline-none font-semibold"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
             />
@@ -213,7 +210,7 @@ export default function AdminDashboard() {
               <button
                 key={appt.id}
                 onClick={() => { setSelectedAppt(appt); setEditMode(false); }}
-                className={`w-full text-left p-4 rounded-2xl transition-all border ${selectedAppt?.id === appt.id ? 'bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-200' : 'bg-white border-transparent hover:border-gray-200 text-gray-700'}`}
+                className={`w-full text-left p-4 rounded-2xl transition-all border ${selectedAppt?.id === appt.id ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20' : 'bg-white border-transparent hover:border-gray-200 text-gray-700'}`}
               >
                 <div className="font-bold truncate">{appt.fullName}</div>
                 <div className={`text-xs ${selectedAppt?.id === appt.id ? 'text-blue-100' : 'text-gray-400'}`}>{appt.preferredDate} • {appt.preferredTime}</div>
@@ -224,7 +221,7 @@ export default function AdminDashboard() {
 
         <div className="mt-10 pt-6 border-t border-gray-100">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
               A
             </div>
             <div className="flex-1 min-w-0">
@@ -237,7 +234,7 @@ export default function AdminDashboard() {
               window.location.hash = '';
               window.location.href = '/';
             }} 
-            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-blue-50 hover:bg-blue-50 text-blue-600 font-bold transition-all mb-3"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-primary/5 hover:bg-secondary/25 text-primary font-bold transition-all mb-3"
           >
             <ArrowLeft size={18} /> Home Page
           </button>
@@ -246,6 +243,7 @@ export default function AdminDashboard() {
           </button>
         </div>
       </aside>
+
 
       {/* Main Content */}
       <main className="flex-1 p-6 lg:p-10 overflow-y-auto">
